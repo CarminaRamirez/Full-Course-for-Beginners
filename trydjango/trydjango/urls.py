@@ -24,7 +24,8 @@ from products.views import (product_detail_view,
                            dynamic_lookup_view,
                            product_delete_view,
                            product_list_view)
-from blog.views import ArticleListView
+#from blog.views import ArticleListView
+
 
 urlpatterns = [
     path('products/', include('products.urls')),

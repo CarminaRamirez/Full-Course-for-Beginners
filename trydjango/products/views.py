@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from .models import Product
 from .forms import ProductForm, RawProductForm
 from django.http import Http404
@@ -24,13 +25,13 @@ def product_delete_view(request, id):
     return render(request, "products/product_delete.html", context)
 
 def dynamic_lookup_view(request, id):
-   # obj = Product.objects.get(id=id)
-   # obj = get_object_or_404(Product, id=id)
-    obj = Product.objects.get(id=id)
+    # obj = Product.objects.get(id=id)
+    # obj = get_object_or_404(Product, id=id)
+    #obj = Product.objects.get(id=id)
     try:
         obj = Product.objects.get(id=id)
     except Product.DoesNotExist:
-        raise Http404
+        return HttpResponse("Producto no existe")
     context = {
         "title": obj.title,
         "description": obj.description
