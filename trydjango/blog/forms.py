@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Article
+from .models import article
 
 class ArticleForm(forms.ModelForm):
     title = forms.CharField(label='', widget=forms.TextInput(attrs={"placeholder": "Your title"}))
@@ -19,7 +19,7 @@ class ArticleForm(forms.ModelForm):
     )
     price = forms.DecimalField(initial=199.99)
     class Meta:
-        model = Article
+        model = article
         fields = [
             'title',
             'description',

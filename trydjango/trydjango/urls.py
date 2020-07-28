@@ -24,6 +24,7 @@ from products.views import (product_detail_view,
                            dynamic_lookup_view,
                            product_delete_view,
                            product_list_view)
+from blog.views import ArticleListView
 
 urlpatterns = [
     path('products/', include('products.urls')),
@@ -34,5 +35,5 @@ urlpatterns = [
     path('product/', product_detail_view),
     path('initial/', render_initial_data),
     #path('products/<int:id>/', dynamic_lookup_view, name='product-detail'),
-
+    path('blog/', include('blog.urls'))
 ]
