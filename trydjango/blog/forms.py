@@ -17,7 +17,7 @@ class ArticleForm(forms.ModelForm):
             }
         )
     )
-    price = forms.DecimalField(initial=199.99)
+    price = forms.DecimalField()
     class Meta:
         model = article
         fields = [

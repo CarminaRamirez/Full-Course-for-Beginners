@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbpostgresql',
+        'NAME': 'DBPostgreSQL',
         'USER': 'postgres',
-        'PASSWORD': 'Anastasia)=',
+        'PASSWORD': 'Anastasia()',
         'HOST': '127.0.0.1',
         'DATABASE_PORT': '5432',
     }
