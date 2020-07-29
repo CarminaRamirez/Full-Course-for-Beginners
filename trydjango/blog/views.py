@@ -44,12 +44,14 @@ class ArticleUpdateView(UpdateView):    #no funciona cuando queres guardar el ca
     form_class = ArticleForm
     queryset = article.objects.all()
 
-    def form_valid(self, form):
-        print(form.cleaned_data)
-
     def get_object(self):
         id_= self.kwargs.get("id")
         return get_object_or_404(article, id=id_)
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+
+
 
 class ArticleDeleteView(DeleteView):
     template_name = 'articles/article_delete.html'

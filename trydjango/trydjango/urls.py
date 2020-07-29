@@ -36,5 +36,6 @@ urlpatterns = [
     path('product/', product_detail_view),
     path('initial/', render_initial_data),
     #path('products/<int:id>/', dynamic_lookup_view, name='product-detail'),
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('courses/', include('courses.urls'))
 ]
